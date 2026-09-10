@@ -8,7 +8,6 @@ import android.os.Build
 import androidx.appcompat.app.AppCompatDelegate
 import rikka.core.res.resolveColor
 import rikka.material.app.MaterialActivity
-import java.util.Locale
 
 open class AppActivity : MaterialActivity() {
 
