@@ -3,6 +3,7 @@ package io.github.vvb2060.keyattestation.util
 import android.app.Activity
 import android.content.Context
 import android.content.res.Resources
+import android.os.Build
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
@@ -58,7 +59,9 @@ object LocaleManager {
             .setSingleChoiceItems(languages.toTypedArray(), currentIndex) { dialog, which ->
                 updateLocale(context, languageCodes[which])
                 dialog.dismiss()
-                if (context is Activity) context.recreate()
+                if (context is Activity && Build.VERSION.SDK_INT < Build.VERSION_CODES.TIRAMISU) {
+                    context.recreate()
+                }
             }
             .show()
     }
