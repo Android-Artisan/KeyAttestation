@@ -1,12 +1,28 @@
 package io.github.vvb2060.keyattestation.app
 
+import android.content.Context
+import android.content.res.Configuration
 import android.content.res.Resources
 import android.graphics.Color
 import android.os.Build
+import androidx.appcompat.app.AppCompatDelegate
 import rikka.core.res.resolveColor
 import rikka.material.app.MaterialActivity
+import java.util.Locale
 
 open class AppActivity : MaterialActivity() {
+
+    override fun attachBaseContext(newBase: Context) {
+        val locales = AppCompatDelegate.getApplicationLocales()
+        if (locales.size() > 0) {
+            val locale = locales[0]!!
+            val config = Configuration(newBase.resources.configuration)
+            config.setLocale(locale)
+            super.attachBaseContext(newBase.createConfigurationContext(config))
+        } else {
+            super.attachBaseContext(newBase)
+        }
+    }
 
     override fun shouldApplyTranslucentSystemBars(): Boolean {
         return true
