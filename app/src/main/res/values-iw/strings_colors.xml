@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="color_default_gray">Gray (Default)</string>
+    <string name="color_original">Original</string>
+    <string name="color_pure_black">Pure Black</string>
+    <string name="color_blue">Blue</string>
+    <string name="color_green">Green</string>
+    <string name="color_orange">Orange</string>
+    <string name="color_pink">Pink</string>
+    <string name="color_purple">Purple</string>
+    <string name="color_red">Red</string>
+    <string name="color_dynamic">Dynamic (Material You)</string>
+</resources>
